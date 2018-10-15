@@ -26,6 +26,7 @@ And we get
 ![](https://github.com/klwuco/picoCTF2018_writeups/blob/master/img/flaskcard5.png)
 
 Jackpot! Flask saw our input and evaluated the expression. Now we just need something to leak. In Flask, we have a config variable that shows, well, configs. Lets try to look at config:
+
 ![](https://github.com/klwuco/picoCTF2018_writeups/blob/master/img/flaskcard6.png)
 ![](https://github.com/klwuco/picoCTF2018_writeups/blob/master/img/flaskcard7.png)
 
