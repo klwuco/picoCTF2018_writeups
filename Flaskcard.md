@@ -64,7 +64,10 @@ Plugging that in and we get our flag.
 
 The hint reads:
 > There's more to the original vulnerability than meets the eye.
+
 > Can you leverage the injection technique to get remote code execution?
+
+
 It seems that we need to inject something to get RCE. Here we need to read online to find out that there we as bug in uber's website that used flask to allow RCE. [https://hackerone.com/reports/125980](https://hackerone.com/reports/125980)
 
 Here we learned a payload ```"".__class__.mro()[1].__subclasses__()```. Trying to type that into the python interpreter and we get a list of classes! We could learn more in [https://nvisium.com/blog/2016/03/09/exploring-ssti-in-flask-jinja2](https://nvisium.com/blog/2016/03/09/exploring-ssti-in-flask-jinja2) and [https://nvisium.com/blog/2016/03/11/exploring-ssti-in-flask-jinja2-part-ii](https://nvisium.com/blog/2016/03/11/exploring-ssti-in-flask-jinja2-part-ii). Lets try if the payload works:
